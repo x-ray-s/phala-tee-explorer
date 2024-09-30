@@ -1,21 +1,13 @@
 {
   "include": ["app/**/*.ts", "app/**/*.d.ts", "app/**/*.tsx"],
-  "references": [
-    {
-      "path": "./tsconfig.app.json"
+  "compilerOptions": {
+    "module": "esnext",
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "types": ["vite/client"],
+    "paths": {
+      "@/*": ["app/*"]
     },
-    {
-      "path": "./tsconfig.node.json"
-    }
-  ],
-  "ts-node": {
-    "transpileOnly": true,
-    "files": true,
-    "compilerOptions": {
-      "target": "es2021",
-      "module": "esnext",
-      "moduleResolution": "node",
-      "resolveJsonModule": true
-    }
+    "jsx": "preserve"
   }
 }

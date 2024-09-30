@@ -6,16 +6,14 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const http = (path, config: RequestInit & { query?: Record<string, string> } = {}) => {
-  const baseUrl = import.meta.env.DEV ? '/api' : window.location.pathname
+  const baseUrl = import.meta.env.VITE_API_URL
   const originSearch = new URLSearchParams(window.location.search)
   const query = new URLSearchParams(config.query || {})
   if (originSearch.get('key')) {
     query.set('key', originSearch.get('key'))
   }
-  const orign = window.location.origin
-  // wapo server route only support '/' 
   const _path = path === '/' ? '' : path
-  const url = new URL(`${orign}${baseUrl}${_path}?${query.toString()}`);
+  const url = new URL(`${baseUrl}${_path}?${query.toString()}`);
   const { query: _, ...withoutQuery } = config
 
   return fetch(url.toString(), {
