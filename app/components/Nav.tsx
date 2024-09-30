@@ -26,7 +26,7 @@ export function Nav() {
             </nav> */}
         </div>
         <div>
-            <Input type="text" className="search" placeholder="Search App ID" onKeyDown={handleKeyDown} />
+
         </div>
     </div>
 
