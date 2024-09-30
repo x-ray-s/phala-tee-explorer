@@ -1,5 +1,5 @@
 import { Hono } from 'hono'
-import { serve } from '@hono/node-server'
+import { handle } from '@hono/node-server/vercel'
 import report from './report.json' assert { type: 'json' };
 const app = new Hono()
 
@@ -98,4 +98,4 @@ b6iaq1eTtIuu2iaqe/mtfXTuTekYQ3JV8kE=`,
     })
 })
 
-serve(app)
+export default handle(app)
