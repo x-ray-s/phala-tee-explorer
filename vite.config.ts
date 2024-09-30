@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import cdn from 'vite-plugin-cdn-import'
 import * as path from 'path'
+import { visualizer } from "rollup-plugin-visualizer";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -12,6 +13,13 @@ export default defineConfig({
         react({
             jsxRuntime: 'automatic',
         }),
+        // visualizer({
+        //     gzipSize: true,
+        //     brotliSize: true,
+        //     emitFile: false,
+        //     filename: "dist/visualizer.html",
+        //     open: true
+        // }),
     ],
     server: {
         proxy: {

@@ -12,9 +12,10 @@
     "transpileOnly": true,
     "files": true,
     "compilerOptions": {
-      "module": "commonjs",
-      "resolveJsonModule": true,
-      "esModuleInterop": true
+      "target": "es2021",
+      "module": "esnext",
+      "moduleResolution": "node",
+      "resolveJsonModule": true
     }
   }
 }

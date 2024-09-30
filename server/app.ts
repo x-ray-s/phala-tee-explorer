@@ -1,8 +1,7 @@
 import { Hono } from 'hono'
 import { serve } from '@hono/node-server'
-import report from './report.json'
+import report from './report.json' assert { type: 'json' };
 const app = new Hono()
-
 
 app.onError((err, c) => {
     console.error(err)

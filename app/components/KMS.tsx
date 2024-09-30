@@ -75,7 +75,7 @@ export function KMS({ data }: { data: KMS }) {
 
                 <div className="grid grid-cols-[200px,1fr]">
                     <div className="text-sm text-gray-500">Compose</div>
-                    <Highlight value={data?.parent.compose} >
+                    <Highlight value={data?.parent.compose} lang="yml">
                     </Highlight>
                 </div>
                 <div className="border-b"></div>

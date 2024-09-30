@@ -1,10 +1,11 @@
 import { ReactChild, PropsWithChildren, useState } from "react"
-import hljs from 'highlight.js';
+import hljs from 'highlight.js/lib/core';
 import 'highlight.js/styles/github.css';
 import { Button } from "@/components/ui/button"
 import { Download } from "lucide-react"
 import { Copy, Check } from "lucide-react"
 import { useCopyToClipboard } from "@uidotdev/usehooks";
+import dockerfile from 'highlight.js/lib/languages/dockerfile';
 
 export function Code({ children, download = false, cmd = false, filename, value, wrap, scroll = false }: PropsWithChildren<{ wrap?: boolean, download?: boolean, cmd?: boolean, filename?: string, value?: string, scroll?: boolean }>) {
 
@@ -18,12 +19,16 @@ export function Code({ children, download = false, cmd = false, filename, value,
     </pre>
 }
 
-export function Highlight({ value, lang = 'dockerfile' }: { value: string, lang?: string }) {
+export function Highlight({ value }: { value: string, lang?: string }) {
+
+    hljs.registerLanguage('dockerfile', dockerfile);
 
     const code = () => {
         return hljs.highlight(
             value,
-            { language: lang }
+            {
+                language: 'dockerfile'
+            }
         ).value
     }
 
