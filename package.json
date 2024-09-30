@@ -1,6 +1,6 @@
 {
-  "name": "wapo-bsc-transaction",
-  "version": "1.0.0",
+  "name": "tee-explorer",
+  "version": "0.1.0",
   "main": "index.js",
   "scripts": {
     "build:app": "vite build",
