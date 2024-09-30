@@ -2,7 +2,13 @@
   "name": "tee-explorer",
   "version": "0.1.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "build:app": "vite build",
+    "dev:app": "vite dev",
+    "preview:app": "vite preview",
+    "dev:server": "nodemon --ext .ts,.js --exec 'node --no-warnings=ExperimentalWarning --loader ts-node/esm server/app.ts '",
+    "build:server": "tsc --project ./tsconfig.build.json"
+  },
   "type": "module",
   "keywords": [],
   "author": "",
