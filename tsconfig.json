@@ -1,0 +1,20 @@
+{
+  "include": ["app/**/*.ts", "app/**/*.d.ts", "app/**/*.tsx"],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ],
+  "ts-node": {
+    "transpileOnly": true,
+    "files": true,
+    "compilerOptions": {
+      "module": "commonjs",
+      "resolveJsonModule": true,
+      "esModuleInterop": true
+    }
+  }
+}
